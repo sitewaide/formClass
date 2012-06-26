@@ -35,10 +35,11 @@ all the params with * are obligatory
 		}
 		//We create the tag
 		$form = '<form ';
-		$form .= 'id='.$id;
-		$form .= ' method='.$method;
-		$form .= ' action='.$action;
-		$form .= ' />';
+		$form .= 'id="'.$id.'"';
+		$form .= ' method="'.$method.'"';
+		$form .= ' action="'.$action.'"';
+		$form .= ' />
+		';
 		//We return the tag
 		return $form;
 	}
@@ -65,15 +66,16 @@ all the params with * are obligatory
 		if(empty($param['placeholder']) OR $param['placeholder'] == ""){
 			$placeholder = "";
 		}else{
-			$placeholder = "placeholder=".$param['placeholder'];
+			$placeholder = 'placeholder="'.$param['placeholder'].'"';
 		}
 		//We create the tag
 		$input = '<input ';
-		$input .= 'name='.$name;
-		$input .=' type='.$type;
-		$input .= ' id='.$id;
+		$input .= 'name="'.$name.'"';
+		$input .=' type="'.$type.'"';
+		$input .= ' id="'.$id.'"';
 		$input .= ' '.$placeholder;
-		$input .= ' />';
+		$input .= ' />
+		';
 		//We return the tag
 		return $input;
 	}
@@ -85,7 +87,7 @@ all the params with * are obligatory
 */
 	public function validate($value, $id = null){
 		if($id != null){
-			$id = "id=".$id;
+			$id = 'id="'.$id.'"';
 		}
 		else{
 			$id = "";
@@ -93,8 +95,9 @@ all the params with * are obligatory
 
 		$validate = '<input type="submit" ';
 		$validate .= $id; 
-		$validate .= ' value='.$value;
-		$validate .= "/></form>";
+		$validate .= ' value="'.$value.'"';
+		$validate .= "/>
+		</form>";
 		return $validate;
 	}
 }
